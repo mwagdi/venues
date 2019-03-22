@@ -22,7 +22,7 @@ class Table extends Component{
                         <th>Participants</th>
                         {venueIds.map((id,i) => (
                             <th
-                            className={`${checkPreferred(id,participantsById,venueIds)}`}
+                            className={`${checkPreferred(id,participantsById,venueIds) ? "green" : ""}`}
                             key={i}>
                                 <div>{venuesById[id].name}</div>
                                 <div>{venuesById[id].categories[0].name}</div>
@@ -39,7 +39,9 @@ class Table extends Component{
                             </td>
                             {venueIds.map((venue,j) => (
                                 <td key={j}>
-                                    <button onClick={() => editParticipant(id,"vote",venue)}>{venue}</button>
+                                    <button
+                                    className={`${participantsById[id].vote === venue ? "voted" : ""}`}
+                                    onClick={() => editParticipant(id,"vote",venue)}>VOTE</button>
                                 </td>
                             ))}
                         </tr>

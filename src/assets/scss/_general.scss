@@ -1,0 +1,28 @@
+html,body{
+    font-size: 16px;
+    background: #f4f5f6;
+    font-family: Arial;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+input[type=text]{
+    background: transparent;
+    box-shadow: none;
+    border: 1px solid #d7d7d7;
+    padding: 0.5em;
+}
+
+.flex-container{
+    display: flex;
+}
+
+.btn{
+    color: white;
+    box-shadow: none;
+    background: #4141cc;
+    border: 1px solid black;
+    padding: 0.5em 1em;
+}
