@@ -1,7 +1,5 @@
 import React,{ Component } from 'react';
-import { connect } from 'react-redux';
 
-import { addParticipant,editParticipant } from '../store/actions';
 import { checkPreferred } from '../helpers';
 
 class Table extends Component{
@@ -53,15 +51,4 @@ class Table extends Component{
     }
 }
 
-const mapStateToProps = state => {
-    const { venueIds,venuesById } = state.venues;
-    const { participantIds,participantsById } = state.participants;
-    return {
-        venueIds,
-        venuesById,
-        participantIds,
-        participantsById
-    }
-}
-
-export default connect(mapStateToProps,{ addParticipant,editParticipant })(Table);
+export default Table;

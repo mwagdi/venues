@@ -1,8 +1,6 @@
 import React,{ Component } from 'react';
-import { connect } from 'react-redux';
 
-import Table from './components/Table';
-import { fetchVenues } from './store/actions';
+import TableContainer from './containers/TableContainer';
 
 class App extends Component{
     state = {
@@ -23,10 +21,10 @@ class App extends Component{
                     type="text" />
                     <input type="submit" value="Search"/>
                 </form>
-                <Table />
+                <TableContainer />
             </React.Fragment>
         )
     }
 }
 
-export default connect(null,{ fetchVenues })(App);
+export default App;
