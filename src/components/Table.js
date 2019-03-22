@@ -2,11 +2,9 @@ import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 
 import { addParticipant,editParticipant } from '../store/actions';
+import { checkPreferred } from '../helpers';
 
 class Table extends Component{
-    // state = {
-    //     participants: []
-    // }
     render(){
         const {
             venueIds,
@@ -22,15 +20,17 @@ class Table extends Component{
         return (
             <React.Fragment>
                 <table>
-                    <th>
-                        <td>Participants</td>
+                    <tr>
+                        <th>Participants</th>
                         {venueIds.map((id,i) => (
-                            <td key={i}>
+                            <th
+                            className={`${checkPreferred(id,participantsById,venueIds)}`}
+                            key={i}>
                                 <div>{venuesById[id].name}</div>
                                 <div>{venuesById[id].categories[0].name}</div>
-                            </td>
+                            </th>
                         ))}
-                    </th>
+                    </tr>
                     {participantIds.map((id,i) => (
                         <tr key={i}>
                             <td>
