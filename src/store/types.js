@@ -1,0 +1,5 @@
+export const FETCH_VENUES = "FETCH_VENUES";
+export const RECIEVE_VENUES = "RECIEVE_VENUES";
+export const ADD_PARTICIPANT = "ADD_PARTICIPANT";
+export const EDIT_PARTICIPANT = "EDIT_PARTICIPANT";
+export const VOTE = "VOTE";
